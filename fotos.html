@@ -6,9 +6,7 @@
   <title>Nós dois 💕</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <body class="fotos-body">
+<body class="fotos-body">
   <div class="fotos-container">
     <h1 class="fotos-titulo">
       Você disse SIM!
@@ -33,7 +31,6 @@
     </div>
   </div>
 
-
   <div class="mensagem">
     <p>Obrigado por ser minha pessoa favorita no mundo todo. 💘</p>
     <p>Eu ainda lembro do "Você está linda" e você meteu um "Sempre estou" 🤣</p>
@@ -42,37 +39,36 @@
   </div>
 
   <div class="carta-container">
-        <button id="mostrarCarta">📜 Abrir Carta</button>
+    <button id="mostrarCarta">📜 Abrir Carta</button>
 
-        <div id="carta" class="oculto">
-            <h2>Contrato Oficial de Namoro 💖</h2>
-            <p>
-            Eu, Matheus, por meio deste documento, declaro oficialmente meu amor pela parte mais linda, fofa e maravilhosa deste mundo (sim, você 💘).<br><br>
-            Comprometo-me a:
-            <ul>
-                <li>Te elogiar mesmo que você tenha acabado de acordar, ou com um bob na cabeça (para mim voce está sempre linda) 😍</li>
-                <li>Dar carinho sem moderação 😘</li>
-                <li>Te ouvir, te apoiar e te fazer rir nos dias bons e nos ruins 💬</li>
-                <li>Estar com você na sua TPM que dura o mês todo 🥰</li>
-                <li>Te lembrar todos os dias o quanto você é especial ✨</li>
-            </ul>
-            Se você aceitar, clique no botão abaixo e prepare-se para viver o romance mais divertido e incrível da história!
-            </p>
-            <button id="aceitarContrato">✅ Aceitar os Termos do Amor</button>
-        </div>
-    </div>
-
-    <div id="mensagemFinal" class="oculto">
-    <h2>Contrato aceito! Agora somos oficialmente um casal perfeito! 💑</h2>
-    </div>
-
-  <div class="barra-frases">
-    <div class="frases-movendo">
-    Nosso amor é meu lugar favorito ❤️ • Você é o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os erros, os acertos e os cafés com você. ☕ • Te amo mais a cada segundo ⏳ •
+    <div id="carta" class="oculto">
+      <h2>Contrato Oficial de Namoro 💖</h2>
+      <p>
+        Eu, Matheus, por meio deste documento, declaro oficialmente meu amor pela parte mais linda, fofa e maravilhosa deste mundo (sim, você 💘).<br><br>
+        Comprometo-me a:
+      </p>
+      <ul>
+        <li>Te elogiar mesmo que você tenha acabado de acordar, ou com um bob na cabeça (para mim você está sempre linda) 😍</li>
+        <li>Dar carinho sem moderação 😘</li>
+        <li>Te ouvir, te apoiar e te fazer rir nos dias bons e nos ruins 💬</li>
+        <li>Estar com você na sua TPM que dura o mês todo 🥰</li>
+        <li>Te lembrar todos os dias o quanto você é especial ✨</li>
+      </ul>
+      <p>Se você aceitar, clique no botão abaixo e prepare-se para viver o romance mais divertido e incrível da história!</p>
+      <button id="aceitarContrato">✅ Aceitar os Termos do Amor</button>
     </div>
   </div>
 
-  <!-- Galeria interativa -->
+  <div id="mensagemFinal" class="oculto">
+    <h2>Contrato aceito! Agora somos oficialmente um casal perfeito! 💑</h2>
+  </div>
+
+  <div class="barra-frases">
+    <div class="frases-movendo">
+      Nosso amor é meu lugar favorito ❤️ • Você é o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os erros, os acertos e os cafés com você. ☕ • Te amo mais a cada segundo ⏳ •
+    </div>
+  </div>
+
   <h2 style="margin-top: 60px;">Um Pouco de Nós 💞</h2>
   <div class="galeria-interativa">
     <img src="images/img2.jpeg" alt="Foto 1" class="foto-galeria" />
@@ -85,27 +81,20 @@
 
 
   <script>
-    document.querySelectorAll('.presente-btn').forEach(botao => {
-      botao.addEventListener('click', () => {
-        const imagem = botao.nextElementSibling;
-        imagem.hidden = !imagem.hidden;
+    document.querySelectorAll('.presente-btn').forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        const img = btn.nextElementSibling;
+        img.hidden = !img.hidden;
       });
     });
+
+    document.getElementById('mostrarCarta').addEventListener('click', () => {
+      document.getElementById('carta').classList.remove('oculto');
+    });
+
+    document.getElementById('aceitarContrato').addEventListener('click', () => {
+      document.getElementById('mensagemFinal').classList.remove('oculto');
+    });
   </script>
-
-  <script src="script.js"></script>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const video = document.querySelector('.video-emoji');
-            video.play().catch(() => {
-            // fallback se autoplay for bloqueado
-            video.muted = true;
-            video.play();
-            });
-        });
-    </script>
-
-
 </body>
 </html>

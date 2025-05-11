@@ -165,26 +165,35 @@ button:hover {
 
 /*Galeria*/
 .galeria-interativa {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
   padding: 20px;
-  max-width: 1000px;
-  margin: 0 auto 60px;
-  box-sizing: border-box;
 }
 
 .foto-galeria {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+  width: calc(33.333% - 16px);
+  max-width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .foto-galeria:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .foto-galeria {
+    width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .foto-galeria {
+    width: 100%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -218,12 +227,5 @@ button:hover {
 @media (max-width: 600px) {
   .foto {
     max-width: 90%;
-  }
-}
-
-@media (max-width: 500px) {
-  .galeria-interativa {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
   }
 }

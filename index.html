@@ -27,23 +27,19 @@
       const x = Math.random() * larguraMax;
       const y = Math.random() * alturaMax;
 
-      nao.style.left = '${x}px';
-      nao.style.top = '${y}px';
+      nao.style.left = `${x}px`;
+      nao.style.top = `${y}px`;
     }
-
 
     function responder() {
       window.location.href = "fotos.html";
     }
 
-    // Movimento apenas em dispositivos móveis
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      setInterval(mudarPosicao, 2000);
+      setInterval(mudarPosicao, 1000);
     }
 
-    // Para o botão não ficar fixo em (0,0) logo ao carregar
     window.onload = mudarPosicao;
   </script>
-
 </body>
 </html>
