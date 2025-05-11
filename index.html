@@ -18,22 +18,32 @@
     const nao = document.getElementById('nao');
 
     function mudarPosicao() {
-      const largura = window.innerWidth - 100;
-      const altura = window.innerHeight - 100;
-      const x = Math.random() * largura;
-      const y = Math.random() * altura;
-      nao.style.left = `${x}px`;
-      nao.style.top = `${y}px`;
+      const larguraBotao = nao.offsetWidth;
+      const alturaBotao = nao.offsetHeight;
+
+      const larguraMax = window.innerWidth - larguraBotao - 20;
+      const alturaMax = window.innerHeight - alturaBotao - 20;
+
+      const x = Math.random() * larguraMax;
+      const y = Math.random() * alturaMax;
+
+      nao.style.left = '${x}px';
+      nao.style.top = '${y}px';
     }
+
 
     function responder() {
       window.location.href = "fotos.html";
     }
 
-    // Se for celular, o botão muda de posição a cada 2s
+    // Movimento apenas em dispositivos móveis
     if (/Mobi|Android/i.test(navigator.userAgent)) {
       setInterval(mudarPosicao, 2000);
     }
+
+    // Para o botão não ficar fixo em (0,0) logo ao carregar
+    window.onload = mudarPosicao;
   </script>
+
 </body>
 </html>

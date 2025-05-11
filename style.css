@@ -34,9 +34,10 @@ button:hover {
 }
 
 #nao {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*FOTOS.HTML*/
@@ -162,13 +163,15 @@ button:hover {
   font-weight: bold;
 }
 
+/*Galeria*/
 .galeria-interativa {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
   padding: 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto 60px;
+  box-sizing: border-box;
 }
 
 .foto-galeria {
@@ -180,8 +183,25 @@ button:hover {
 }
 
 .foto-galeria:hover {
-  transform: scale(1.05) rotate(-1deg);
+  transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 500px) {
+  .fotos-titulo {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .video-emoji {
+    width: 40px;
+    height: 40px;
+  }
+
+  #mostrarCarta {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
 }
 
 
@@ -198,5 +218,12 @@ button:hover {
 @media (max-width: 600px) {
   .foto {
     max-width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .galeria-interativa {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
   }
 }

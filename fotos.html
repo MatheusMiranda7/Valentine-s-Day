@@ -68,7 +68,7 @@
 
   <div class="barra-frases">
     <div class="frases-movendo">
-    Nosso amor é meu lugar favorito ❤️ • Você é o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os erros, os acertos e os cafés com você. 🌟 • Te amo mais a cada segundo ⏳ •
+    Nosso amor é meu lugar favorito ❤️ • Você é o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os erros, os acertos e os cafés com você. ☕ • Te amo mais a cada segundo ⏳ •
     </div>
   </div>
 
@@ -94,6 +94,18 @@
   </script>
 
   <script src="script.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const video = document.querySelector('.video-emoji');
+            video.play().catch(() => {
+            // fallback se autoplay for bloqueado
+            video.muted = true;
+            video.play();
+            });
+        });
+    </script>
+
 
 </body>
 </html>
