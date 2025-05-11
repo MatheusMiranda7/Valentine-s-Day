@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nós dois 💕</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <body class="fotos-body">
+  <div class="fotos-container">
+    <h1 class="fotos-titulo">
+      Você disse SIM!
+      <video src="video/video1.mp4" autoplay muted loop playsinline class="video-emoji"></video>
+    </h1>
+
+    <div class="fotos-galeria">
+      <div class="foto-box">
+        <button class="presente-btn">🎁</button>
+        <img src="images/img1.jpeg" alt="Foto 1" class="foto" hidden>
+      </div>
+
+      <div class="foto-box">
+        <button class="presente-btn">🎁</button>
+        <img src="images/img1.jpeg" alt="Foto 2" class="foto" hidden>
+      </div>
+
+      <div class="foto-box">
+        <button class="presente-btn">🎁</button>
+        <img src="images/img1.jpeg" alt="Foto 3" class="foto" hidden>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mensagem">
+    <p>Obrigado por ser minha pessoa favorita no mundo todo. 💘</p>
+    <p>Eu ainda lembro do "Você está linda" e você meteu um "Sempre estou" 🤣</p>
+    <p>Você é meu bug preferido no sistema da vida. 🫶🏻</p>
+    <p>Se eu tivesse que te escolher de novo, ainda erraria todas as opções só pra poder te conhecer outra vez</p>
+  </div>
+
+  <div class="carta-container">
+        <button id="mostrarCarta">📜 Abrir Carta</button>
+
+        <div id="carta" class="oculto">
+            <h2>Contrato Oficial de Namoro 💖</h2>
+            <p>
+            Eu, Matheus, por meio deste documento, declaro oficialmente meu amor pela parte mais linda, fofa e maravilhosa deste mundo (sim, você 💘).<br><br>
+            Comprometo-me a:
+            <ul>
+                <li>Te elogiar mesmo que você tenha acabado de acordar, ou com um bob na cabeça (para mim voce está sempre linda) 😍</li>
+                <li>Dar carinho sem moderação 😘</li>
+                <li>Te ouvir, te apoiar e te fazer rir nos dias bons e nos ruins 💬</li>
+                <li>Estar com você na sua TPM que dura o mês todo 🥰</li>
+                <li>Te lembrar todos os dias o quanto você é especial ✨</li>
+            </ul>
+            Se você aceitar, clique no botão abaixo e prepare-se para viver o romance mais divertido e incrível da história!
+            </p>
+            <button id="aceitarContrato">✅ Aceitar os Termos do Amor</button>
+        </div>
+    </div>
+
+    <div id="mensagemFinal" class="oculto">
+    <h2>Contrato aceito! Agora somos oficialmente um casal perfeito! 💑</h2>
+    </div>
+
+  <div class="barra-frases">
+    <div class="frases-movendo">
+    Nosso amor é meu lugar favorito ❤️ • Você é o melhor presente que a vida me deu 🎁 • Quero rir com você todos os dias 😂 • Quero viver os erros, os acertos e os cafés com você. 🌟 • Te amo mais a cada segundo ⏳ •
+    </div>
+  </div>
+
+  <!-- Galeria interativa -->
+  <h2 style="margin-top: 60px;">Um Pouco de Nós 💞</h2>
+  <div class="galeria-interativa">
+    <img src="images/img2.jpeg" alt="Foto 1" class="foto-galeria" />
+    <img src="images/img2.jpeg" alt="Foto 2" class="foto-galeria" />
+    <img src="images/img2.jpeg" alt="Foto 3" class="foto-galeria" />
+    <img src="images/img2.jpeg" alt="Foto 4" class="foto-galeria" />
+    <img src="images/img2.jpeg" alt="Foto 5" class="foto-galeria" />
+    <img src="images/img2.jpeg" alt="Foto 6" class="foto-galeria" />
+  </div>
+
+
+  <script>
+    document.querySelectorAll('.presente-btn').forEach(botao => {
+      botao.addEventListener('click', () => {
+        const imagem = botao.nextElementSibling;
+        imagem.hidden = !imagem.hidden;
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quer namorar comigo?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Quer namorar comigo? 💖</h1>
+
+  <div class="buttons">
+    <button onclick="responder()">Sim</button>
+    <button id="nao" onmouseover="mudarPosicao()">Não</button>
+  </div>
+
+  <script>
+    const nao = document.getElementById('nao');
+
+    function mudarPosicao() {
+      const largura = window.innerWidth - 100;
+      const altura = window.innerHeight - 100;
+      const x = Math.random() * largura;
+      const y = Math.random() * altura;
+      nao.style.left = `${x}px`;
+      nao.style.top = `${y}px`;
+    }
+
+    function responder() {
+      window.location.href = "fotos.html";
+    }
+
+    // Se for celular, o botão muda de posição a cada 2s
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      setInterval(mudarPosicao, 2000);
+    }
+  </script>
+</body>
+</html>
