@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quer namorar comigo?</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Quer namorar comigo? 💖</h1>
 
   <div class="buttons">
     <button onclick="responder()">Sim</button>
-    <button id="nao" onmouseover="mudarPosicao()">Não</button>
+    <button id="nao">Não</button>
   </div>
 
   <script>
-    const nao = document.getElementById('nao');
+    const nao = document.getElementById("nao");
 
     function mudarPosicao() {
       const larguraBotao = nao.offsetWidth;
@@ -27,6 +27,7 @@
       const x = Math.random() * larguraMax;
       const y = Math.random() * alturaMax;
 
+      nao.style.position = "fixed";
       nao.style.left = `${x}px`;
       nao.style.top = `${y}px`;
     }
@@ -35,8 +36,18 @@
       window.location.href = "fotos.html";
     }
 
+    function iniciarMovimento() {
+      mudarPosicao();
+      setTimeout(iniciarMovimento, 300); // ajustável
+    }
+
+    // Detecção de celular
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-      setInterval(mudarPosicao, 1000);
+      iniciarMovimento();
+      nao.addEventListener("touchstart", mudarPosicao);
+    } else {
+      // Em desktop, movimento só com hover
+      nao.addEventListener("mouseover", mudarPosicao);
     }
 
     window.onload = mudarPosicao;
